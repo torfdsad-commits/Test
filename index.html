@@ -339,6 +339,133 @@
     .fn-body h3{font-size:1.2rem}
     .sec-head h2{font-size:1.4rem}
     .f-phone{font-size:.95rem}
+    .nav-avatar{display:none}
+  }
+
+  /* ===== Account system ===== */
+  .nav-auth{display:flex;align-items:center;gap:10px}
+  .nav-avatar{
+    width:30px;height:30px;border-radius:50%;object-fit:cover;
+    background:rgba(255,255,255,.2);flex:0 0 auto;
+  }
+  .nav-user{
+    display:inline-flex;align-items:center;gap:9px;color:#e4ebf2;font-weight:600;
+    font-size:.88rem;padding:8px 12px;cursor:pointer;border-radius:6px;transition:.15s;
+  }
+  .nav-user:hover{background:rgba(255,255,255,.12);color:#fff}
+  .nav-user .caret{font-size:.7rem;opacity:.8}
+  .nav-login-btn{
+    display:inline-flex;align-items:center;gap:8px;color:#e4ebf2;font-weight:600;
+    font-size:.88rem;padding:12px 14px;cursor:pointer;transition:.15s;border:none;background:none;
+  }
+  .nav-login-btn:hover{color:#fff}
+  .nav-login-btn svg{width:16px;height:16px;fill:currentColor}
+
+  .modal-overlay{
+    position:fixed;inset:0;background:rgba(20,30,40,.55);z-index:200;
+    display:none;align-items:center;justify-content:center;padding:20px;
+  }
+  .modal-overlay.open{display:flex}
+  .modal{
+    background:#fff;border-radius:12px;width:100%;max-width:420px;max-height:92vh;
+    overflow-y:auto;box-shadow:var(--shadow-lg);padding:0;
+  }
+  .modal-head{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 22px;border-bottom:1px solid var(--line);
+  }
+  .modal-head h3{font-size:1.15rem;color:var(--ink);font-weight:700}
+  .modal-close{
+    background:none;border:none;font-size:1.4rem;color:var(--muted);cursor:pointer;line-height:1;
+  }
+  .modal-close:hover{color:var(--ink)}
+  .modal-body{padding:22px}
+  .form-group{margin-bottom:16px}
+  .form-group label{display:block;font-size:.82rem;font-weight:600;color:var(--ink);margin-bottom:6px}
+  .form-group input[type=text],.form-group input[type=email],.form-group input[type=password]{
+    width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:8px;
+    font-size:.95rem;font-family:inherit;color:var(--ink);transition:.15s;background:#fff;
+  }
+  .form-group input:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(44,95,138,.15)}
+  .form-error{display:none;background:#fdeaea;color:#c0392b;font-size:.84rem;padding:10px 12px;border-radius:8px;margin-bottom:16px}
+  .form-error.show{display:block}
+  .form-hint{font-size:.78rem;color:var(--muted);margin-top:5px}
+  .btn-block{width:100%;justify-content:center}
+  .modal-switch{text-align:center;font-size:.88rem;color:var(--muted);margin-top:16px}
+  .modal-switch a{color:var(--blue);font-weight:600;cursor:pointer}
+  .modal-switch a:hover{text-decoration:underline}
+  .avatar-select{
+    display:flex;align-items:center;gap:16px;margin-bottom:6px;
+  }
+  .avatar-preview{
+    width:70px;height:70px;border-radius:50%;object-fit:cover;
+    background:var(--ice,#ecf4fd);border:1px solid var(--line);
+  }
+  .avatar-upload{
+    display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer;max-width:180px;
+  }
+  .avatar-upload .avatar-preview{width:96px;height:96px;transition:.15s}
+  .avatar-upload:hover .avatar-preview{box-shadow:0 0 0 3px rgba(44,95,138,.2);border-color:var(--blue)}
+  .avatar-upload input{display:none}
+  .avatar-hint{font-size:.78rem;color:var(--blue);font-weight:600;text-align:center;line-height:1.3}
+  .avatar-actions{display:flex;flex-direction:column;gap:8px}
+  .btn-file{
+    background:var(--bg);border:1px solid var(--line);border-radius:8px;
+    padding:9px 14px;font-size:.86rem;font-weight:600;color:var(--ink);cursor:pointer;transition:.15s;
+  }
+  .btn-file:hover{border-color:var(--blue);color:var(--blue)}
+  .btn-file input{display:none}
+  .profile-field{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:11px 13px;font-size:.95rem;color:var(--ink);margin-bottom:16px}
+  .badge-row{display:flex;align-items:center;gap:12px}
+  .btn-ghost-prof{
+    width:100%;padding:11px 13px;border:1px solid var(--line);border-radius:8px;
+    background:var(--bg);color:var(--muted);font-weight:600;font-size:.9rem;cursor:pointer;transition:.15s;
+  }
+  .btn-ghost-prof:hover{border-color:#c0392b;color:#c0392b;background:#fdeaea}
+
+  /* ===== Pages (раделы сайта) ===== */
+  .page-view{display:none}
+  .page-view.active{display:block}
+  .page-hero{background:var(--navy);color:#fff;padding:48px 0 38px;margin-bottom:40px}
+  .page-hero h1{font-size:1.9rem;font-weight:700;margin-bottom:8px}
+  .page-hero p{color:#c9d5e1;font-size:1rem;max-width:700px}
+  .page-body h2{
+    font-size:1.4rem;color:var(--ink);font-weight:700;border-left:4px solid var(--navy);
+    padding-left:14px;margin:0 0 22px;
+  }
+  .sections-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-bottom:40px}
+  .section-card{display:block;background:#fff;border:1px solid var(--line);border-radius:8px;padding:18px 20px;color:inherit;transition:.15s}
+  .section-card:hover{border-color:var(--navy);box-shadow:var(--shadow);color:inherit}
+  .section-card .sc-ico{width:38px;height:38px;border-radius:6px;background:var(--bg);color:var(--navy);display:flex;align-items:center;justify-content:center;margin-bottom:12px;border:1px solid var(--line)}
+  .section-card .sc-ico svg{width:20px;height:20px;fill:currentColor}
+  .section-card h3{font-size:1.02rem;color:var(--ink);font-weight:700;margin-bottom:4px}
+  .section-card .sc-arrow{color:var(--blue);font-weight:600;font-size:.86rem;display:inline-flex;align-items:center;gap:6px;margin-top:8px}
+  .section-card .sc-arrow svg{width:14px;height:14px;fill:currentColor}
+  .nav-breadcrumb{font-size:.86rem;color:var(--muted);margin-bottom:18px}
+  .nav-breadcrumb a{color:var(--blue);cursor:pointer}
+  .nav-breadcrumb a:hover{text-decoration:underline}
+  .news-list{display:flex;flex-direction:column;gap:18px}
+  .news-item{
+    display:flex;gap:18px;background:#fff;border:1px solid var(--line);border-radius:10px;
+    padding:18px;transition:.15s;align-items:flex-start;
+  }
+  .news-item:hover{border-color:var(--navy);box-shadow:var(--shadow)}
+  .ni-img{
+    flex:0 0 88px;height:88px;border-radius:8px;background:var(--navy-2);color:#cbd6e0;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .ni-img svg{width:38px;height:38px;fill:rgba(255,255,255,.4)}
+  .ni-body{flex:1}
+  .ni-date{display:inline-block;font-size:.76rem;color:var(--muted);font-weight:600;margin-bottom:6px;background:var(--bg);padding:3px 9px;border-radius:4px;border:1px solid var(--line)}
+  .ni-body h3{font-size:1.08rem;color:var(--ink);font-weight:700;margin-bottom:6px;line-height:1.35}
+  .ni-body h3 a{color:inherit}
+  .ni-body h3 a:hover{color:var(--blue)}
+  .ni-body p{color:var(--muted);font-size:.9rem}
+  @media(max-width:700px){
+    .sections-grid{grid-template-columns:1fr}
+    .page-hero h1{font-size:1.5rem}
+    .news-item{flex-direction:column}
+    .ni-img{flex:0 0 auto;width:100%;height:120px}
   }
 </style>
 </head>
@@ -396,8 +523,8 @@
   <div class="nav-bar" id="navBar">
     <div class="wrap nav">
       <a class="nav-link active" href="https://ит-колледж.рф/it/index.php">Главная</a>
-      <a class="nav-link" href="https://ит-колледж.рф/it/page.php">Разделы сайта</a>
-      <a class="nav-link" href="https://ит-колледж.рф/it/news.php">Новости</a>
+      <a class="nav-link" href="#" id="navSections">Разделы сайта</a>
+      <a class="nav-link" href="#" id="navNews">Новости</a>
       <a class="nav-link" href="https://ит-колледж.рф/it/pg.php?rub=1643013117&full=1">Абитуриентам</a>
       <a class="nav-link" href="https://ит-колледж.рф/it/pg.php?rub=1643016357&full=1">Студентам</a>
       <a class="nav-link" href="https://ит-колледж.рф/it/pg.php?rub=1643203650&full=1">Центр карьеры</a>
@@ -405,10 +532,19 @@
       <a class="nav-link" href="https://ит-колледж.рф/it/page.php?rub=1111111111&pag=1744965647.sse">Общество «Знание»</a>
       <a class="nav-link" href="https://ит-колледж.рф/it/contact.php">Контакты</a>
       <span class="nav-spacer"></span>
-      <span class="nav-login" id="loginBtn">
-        <svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-3.3 0-8 1.7-8 5v1h16v-1c0-3.3-4.7-5-8-5z"/></svg>
-        Вход
-      </span>
+      <div class="nav-auth" id="authBox">
+        <!-- Показано когда не вошли -->
+        <button class="nav-login-btn" id="loginBtn">
+          <svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-3.3 0-8 1.7-8 5v1h16v-1c0-3.3-4.7-5-8-5z"/></svg>
+          Вход
+        </button>
+        <!-- Станет видимым после входа -->
+        <div class="nav-user" id="userMenu" style="display:none">
+          <img class="nav-avatar" id="navAvatar" alt="Аватар" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c7d2de'><path d='M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-3.3 0-8 1.7-8 5v1h16v-1c0-3.3-4.7-5-8-5z'/></svg>"/>
+          <span id="navUserName">—</span>
+          <span class="caret">▾</span>
+        </div>
+      </div>
       <a class="nav-search" href="https://ит-колледж.рф/it/find.php">
         <svg viewBox="0 0 24 24"><path d="M15.5 14h-.8l-.3-.3a6.5 6.5 0 1 0-.7.7l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/></svg>
         Поиск
@@ -416,6 +552,230 @@
     </div>
   </div>
 </header>
+
+<!-- ===== Hero ===== -->
+<!-- ===== Страница "Разделы сайта" ===== -->
+<div class="page-view" id="pageSections">
+  <div class="page-hero">
+    <div class="wrap">
+      <h1>Разделы сайта</h1>
+      <p>Полная информация о колледже: сведения об организации, абитуриентам, студентам, центре карьеры и партнёрам.</p>
+    </div>
+  </div>
+  <div class="wrap page-body">
+    <div class="nav-breadcrumb"><a id="sectionsHome">Главная</a> / <span>Разделы сайта</span></div>
+    <h2>Разделы сайта</h2>
+    <div class="sections-grid" id="sectionsList">
+      <a class="section-card" href="https://ит-колледж.рф/it/page.php?rub=0000000000">
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM9.5 14.6 7 15.9V19l2.5 1.3z"/></svg></div>
+        <h3>О колледже</h3>
+        <span class="sc-arrow">Перейти <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="section-card" href="https://ит-колледж.рф/it/page.php?rub=1642965797">
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M4 5v14h16V5H4zm14 12H6v-2h12v2zm0-4H6v-1h12v1zm0-3H6V8h12v2z"/></svg></div>
+        <h3>Сведения об образовательной организации</h3>
+        <span class="sc-arrow">Перейти <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="section-card" href="https://ит-колледж.рф/it/page.php?rub=1643013117">
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M16 11c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-8 0c1.7 0 3-1.3 3-3S9.7 5 8 5 5 6.3 5 8s1.3 3 3 3zm0 2c-1.7 0-5 .8-5 2.5V19h10v-3.5c0-1.7-3.3-2.5-5-2.5zm8 0c-.3 0-.6 0-1 .1 1.2.7 2 1.6 2 2.4V19h6v-3.5c0-1.7-3.3-2.5-6-2.5z"/></svg></div>
+        <h3>Абитуриентам</h3>
+        <span class="sc-arrow">Перейти <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="section-card" href="https://ит-колледж.рф/it/page.php?rub=1643016357">
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-3.3 0-8 1.7-8 5v1h16v-1c0-3.3-4.7-5-8-5z"/></svg></div>
+        <h3>Студентам</h3>
+        <span class="sc-arrow">Перейти <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="section-card" href="https://ит-колледж.рф/it/page.php?rub=1643203650">
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M20 6h-4V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2zM10 4h4v2h-4V4zm10 15H4V8h16v11z"/></svg></div>
+        <h3>Центр карьеры</h3>
+        <span class="sc-arrow">Перейти <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="section-card" href="https://ит-колледж.рф/it/page.php?rub=1643203662">
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M16 11c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-8 0c1.7 0 3-1.3 3-3S9.7 5 8 5 5 6.3 5 8s1.3 3 3 3zm0 2c-1.7 0-5 .8-5 2.5V19h10v-3.5c0-1.7-3.3-2.5-5-2.5zm8 0c-.3 0-.6 0-1 .1 1.2.7 2 1.6 2 2.4V19h6v-3.5c0-1.7-3.3-2.5-6-2.5z"/></svg></div>
+        <h3>Партнёрам</h3>
+        <span class="sc-arrow">Перейти <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="section-card" href="https://ит-колледж.рф/it/page.php?rub=1643883679">
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM9.5 14.6 7 15.9V19l2.5 1.3z"/></svg></div>
+        <h3>Национальные проекты</h3>
+        <span class="sc-arrow">Перейти <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="section-card" href="https://ит-колледж.рф/it/page.php?rub=1643883703">
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M7 3H4a1 1 0 0 0-1 1v3h2V5h2V3zm10 0v2h2v2h2V4a1 1 0 0 0-1-1h-3zM3 17v3a1 1 0 0 0 1 1h3v-2H5v-2H3zm18 0h-2v2h-2v2h3a1 1 0 0 0 1-1v-3z"/><path d="M3 7H2v10h20V7H3zm2 2h14v6H5V9z"/></svg></div>
+        <h3>Дистанционное обучение</h3>
+        <span class="sc-arrow">Перейти <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="section-card" href="https://ит-колледж.рф/it/page.php?rub=1643883719">
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3z"/></svg></div>
+        <h3>Независимая оценка качества образования</h3>
+        <span class="sc-arrow">Перейти <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="section-card" href="https://ит-колледж.рф/it/page.php?rub=1643883761">
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M16 11c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-8 0c1.7 0 3-1.3 3-3S9.7 5 8 5 5 6.3 5 8s1.3 3 3 3zm0 2c-1.7 0-5 .8-5 2.5V19h10v-3.5c0-1.7-3.3-2.5-5-2.5zm8 0c-.3 0-.6 0-1 .1 1.2.7 2 1.6 2 2.4V19h6v-3.5c0-1.7-3.3-2.5-6-2.5z"/></svg></div>
+        <h3>Инклюзивное образование</h3>
+        <span class="sc-arrow">Перейти <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="section-card" href="https://ит-колледж.рф/it/page.php?rub=1649246204">
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.6 3.8 10.7 9 12 5.2-1.3 9-6.4 9-12V5l-9-4zm0 6a3 3 0 1 1 0 6 3 3 0 0 1 0-6zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg></div>
+        <h3>Противодействие коррупции</h3>
+        <span class="sc-arrow">Перейти <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="section-card" href="https://ит-колледж.рф/it/page.php?rub=1649322675">
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm-1-13h2v7h-2V7zm0 9h2v2h-2v-2z"/></svg></div>
+        <h3>БПОО</h3>
+        <span class="sc-arrow">Перейти <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="section-card" href="https://ит-колледж.рф/it/page.php?rub=1675331048">
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M16 11c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-8 0c1.7 0 3-1.3 3-3S9.7 5 8 5 5 6.3 5 8s1.3 3 3 3zm0 2c-1.7 0-5 .8-5 2.5V19h10v-3.5c0-1.7-3.3-2.5-5-2.5zm8 0c-.3 0-.6 0-1 .1 1.2.7 2 1.6 2 2.4V19h6v-3.5c0-1.7-3.3-2.5-6-2.5z"/></svg></div>
+        <h3>РДДМ</h3>
+        <span class="sc-arrow">Перейти <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="section-card" href="https://ит-колледж.рф/it/page.php?rub=1729573894">
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.4 15.4 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.7.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.7.1.4 0 .8-.3 1l-2.2 2.1z"/></svg></div>
+        <h3>Оказание бесплатной юридической помощи</h3>
+        <span class="sc-arrow">Перейти <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="section-card" href="https://ит-колледж.рф/it/page.php?rub=1788332391">
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M12 1l9 4v6c0 5.6-3.8 10.7-9 12-5.2-1.3-9-6.4-9-12V5l9-4zm0 2.3L5 6.6v4.4c0 4.6 3.1 8.9 7 10 3.9-1.1 7-5.4 7-10V6.6l-7-3.3z"/></svg></div>
+        <h3>Проект «Обркредит в СПО»</h3>
+        <span class="sc-arrow">Перейти <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+
+    <h2>О колледже</h2>
+    <div class="sections-grid">
+      <a class="section-card" href="https://ит-колледж.рф/it/page.php?rub=0000000000&pag=1642964576.sse">
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M12 2 2 7.5v9L12 22l10-5.5v-9L12 2zM5 9.2l7 3.8 7-3.8-7-3.8-7 3.8z"/></svg></div>
+        <h3>Отделения и специальности</h3>
+        <span class="sc-arrow">Перейти <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="section-card" href="https://ит-колледж.рф/it/page.php?rub=0000000000&pag=1643003731.sse">
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4V5zm2 2v10h12V7H6z"/></svg></div>
+        <h3>Учебные комплексы</h3>
+        <span class="sc-arrow">Перейти <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="section-card" href="https://ит-колледж.рф/it/page.php?rub=0000000000&pag=1649417700.sse">
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9h-2a7 7 0 1 1-7-7v2zM13 4.1A7 7 0 0 1 19.9 11H13V4.1z"/></svg></div>
+        <h3>История</h3>
+        <span class="sc-arrow">Перейти <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="section-card" href="https://ит-колледж.рф/it/page.php?rub=0000000000&pag=1649417888.sse">
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M4 19V5h3v14H4zm5 0V5h3v14H9zm5 0V5h3v14h-3z"/></svg></div>
+        <h3>Библиотека</h3>
+        <span class="sc-arrow">Перейти <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="section-card" href="https://ит-колледж.рф/it/page.php?rub=0000000000&pag=1649421029.sse">
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M12 2 2 7.5v9L12 22l10-5.5v-9L12 2zm0 3 6.5 3.5L12 12 5.5 8.5 12 5zm-7 7 5 2.7v3.1L5 15.1v-3zm9 2.7 5-2.7v3.1l-5 2.7v-3.1z"/></svg></div>
+        <h3>Структура</h3>
+        <span class="sc-arrow">Перейти <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="section-card" href="https://ит-колледж.рф/it/page.php?rub=0000000000&pag=1754635752.sse">
+        <div class="sc-ico"><svg viewBox="0 0 24 24"><path d="M10 16v-1.7A5 5 0 1 1 14 7h-2a3 3 0 1 0-3 3h2v2H5a10 10 0 1 1-3.9-1.6h1.8A8 8 0 1 0 12 4h-2l3-3 3 3h-2a10 10 0 1 1-4 12z"/></svg></div>
+        <h3>Меры поддержки для улучшения жилищных условий педагогов</h3>
+        <span class="sc-arrow">Перейти <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Страница "Новости" ===== -->
+<div class="page-view" id="pageNews">
+  <div class="page-hero">
+    <div class="wrap">
+      <h1>Наши Новости</h1>
+      <p>События и факты из жизни ИТ-колледжа.</p>
+    </div>
+  </div>
+  <div class="wrap page-body">
+    <div class="nav-breadcrumb"><a id="newsHome">Главная</a> / <span>Новости</span></div>
+    <div class="news-list">
+      <article class="news-item">
+        <a class="ni-img" href="https://ит-колледж.рф/it/news.php?news=9643277453&start=0" aria-label="Молодость, карьера и IT"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm-1-13h2v6h-2V7zm0 8h2v2h-2z"/></svg></a>
+        <div class="ni-body">
+          <span class="ni-date">Актуально</span>
+          <h3><a href="https://ит-колледж.рф/it/news.php?news=9643277453&start=0">Молодость, карьера и IT</a></h3>
+          <p>Образовательные площадки, конкурсы профессионального мастерства и кибербитвы позади — Пензенский…</p>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <a class="ni-img" href="https://ит-колледж.рф/it/news.php?news=1794983762&start=0" aria-label="Создаём личный финансовый план"><svg viewBox="0 0 24 24"><path d="M12 3 2 20h20L12 3zm0 6 4.4 8H7.6L12 9z"/><circle cx="12" cy="16" r="1"/></svg></a>
+        <div class="ni-body">
+          <span class="ni-date">18.11.2026</span>
+          <h3><a href="https://ит-колледж.рф/it/news.php?news=1794983762&start=0">Создаём личный финансовый план</a></h3>
+          <p>Финансовая грамотность — важный навык для взрослой жизни! Педагоги Пензенского…</p>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <a class="ni-img" href="https://ит-колледж.рф/it/news.php?news=1794983639&start=0" aria-label="Интерактивный практикум"><svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3zM9.5 14.6 7 15.9V19l2.5 1.3z"/></svg></a>
+        <div class="ni-body">
+          <span class="ni-date">18.11.2026</span>
+          <h3><a href="https://ит-колледж.рф/it/news.php?news=1794983639&start=0">Интерактивный практикум</a></h3>
+          <p>Специалисты МЦ «Юность» провели для студентов первого курса Пензенского ИТ-колледжа…</p>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <a class="ni-img" href="https://ит-колледж.рф/it/news.php?news=1794983325&start=0" aria-label="Атмосфера наставничества"><svg viewBox="0 0 24 24"><path d="M16 11c1.7 0 3-1.3 3-3s-1.3-3-3-3-3 1.3-3 3 1.3 3 3 3zm-8 0c1.7 0 3-1.3 3-3S9.7 5 8 5 5 6.3 5 8s1.3 3 3 3zm0 2c-1.7 0-5 .8-5 2.5V19h10v-3.5c0-1.7-3.3-2.5-5-2.5zm8 0c-.3 0-.6 0-1 .1 1.2.7 2 1.6 2 2.4V19h6v-3.5c0-1.7-3.3-2.5-6-2.5z"/></svg></a>
+        <div class="ni-body">
+          <span class="ni-date">18.11.2026</span>
+          <h3><a href="https://ит-колледж.рф/it/news.php?news=1794983325&start=0">Атмосфера наставничества</a></h3>
+          <p>Преподаватель Пензенского колледжа информационных и промышленных технологий Д.А. Ручкин вышел…</p>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <a class="ni-img" href="https://ит-колледж.рф/it/news.php?news=1794982673&start=0" aria-label="Рассказываем о нас"><svg viewBox="0 0 24 24"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-3.3 0-8 1.7-8 5v1h16v-1c0-3.3-4.7-5-8-5z"/></svg></a>
+        <div class="ni-body">
+          <span class="ni-date">18.11.2026</span>
+          <h3><a href="https://ит-колледж.рф/it/news.php?news=1794982673&start=0">Рассказываем о нас</a></h3>
+          <p>Сотрудники Пензенского ИТ-колледжа продолжают активную профориентационную работу, рассказывая школьникам Сурского…</p>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <a class="ni-img" href="https://ит-колледж.рф/it/news.php?news=1794981419&start=0" aria-label="Заслуженная благодарность"><svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 11-6-11-6zm0 2.3L18.5 9 12 12 5.5 9 12 5.3zM2 17l10 5 10-5-1.5-.8L12 20.4 3.5 16.2 2 17z"/></svg></a>
+        <div class="ni-body">
+          <span class="ni-date">18.11.2026</span>
+          <h3><a href="https://ит-колледж.рф/it/news.php?news=1794981419&start=0">Заслуженная благодарность</a></h3>
+          <p>Педагоги Пензенского колледжа информационных и промышленных технологий принимают активное участие…</p>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <a class="ni-img" href="https://ит-колледж.рф/it/news.php?news=1794908716&start=0" aria-label="Славный путь"><svg viewBox="0 0 24 24"><path d="M12 1 3 5v6c0 5.6 3.8 10.7 9 12 5.2-1.3 9-6.4 9-12V5l-9-4zm3 8.5-4 4-2-2L7.6 13l3.4 3.4 4.4-4.4L15 9.5z"/></svg></a>
+        <div class="ni-body">
+          <span class="ni-date">17.11.2026</span>
+          <h3><a href="https://ит-колледж.рф/it/news.php?news=1794908716&start=0">Славный путь</a></h3>
+          <p>Патриотическое воспитание — важная часть событийного наполнения региона! Студенты Пензенского…</p>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <a class="ni-img" href="https://ит-колледж.рф/it/news.php?news=1794835099&start=0" aria-label="Память о тех, кого нет с нами"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5c0 2 1.2 3.7 3 4.6V14h4v-2.4c1.8-.9 3-2.6 3-4.6a5 5 0 0 0-5-5zm-2 5a2 2 0 1 1 4 0 2 2 0 0 1-4 0zM9 16h6l-1 5h-4l-1-5z"/></svg></a>
+        <div class="ni-body">
+          <span class="ni-date">16.11.2026</span>
+          <h3><a href="https://ит-колледж.рф/it/news.php?news=1794835099&start=0">Память о тех, кого нет с нами</a></h3>
+          <p>Еженедельная торжественная линейка начала учебной недели в Пензенском ИТ-колледже была…</p>
+        </div>
+      </article>
+
+      <article class="news-item">
+        <a class="ni-img" href="https://ит-колледж.рф/it/news.php?news=1794834570&start=0" aria-label="Опасность предательства"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5v1H5v11h14V8h-2V7a5 5 0 0 0-5-5zm-3 6V7a3 3 0 0 1 6 0v1H9z"/></svg></a>
+        <div class="ni-body">
+          <span class="ni-date">16.11.2026</span>
+          <h3><a href="https://ит-колледж.рф/it/news.php?news=1794834570&start=0">Опасность предательства</a></h3>
+          <p>Студенты Пензенского ИТ-колледжа продолжают принимать участие в тематических кинолекториях, освещающих…</p>
+        </div>
+      </article>
+    </div>
+    <div style="text-align:center;margin-top:30px">
+      <a class="btn btn-primary" href="https://ит-колледж.рф/it/news.php?start=9">Больше новостей</a>
+    </div>
+  </div>
+</div>
 
 <!-- ===== Hero ===== -->
 <section class="hero">
@@ -801,9 +1161,9 @@
           <li><a href="https://ит-колледж.рф/index_old.php">Старая версия сайта</a></li>
           <li><a href="https://ит-колледж.рф/it/index.php">Главная</a></li>
           <li><a href="https://ит-колледж.рф/it/page.php?rub=1649246204">Противодействие коррупции</a></li>
-          <li><a href="https://ит-колледж.рф/it/news.php">Новости</a></li>
+          <li><a href="#" id="footerNews">Новости</a></li>
           <li><a href="https://ит-колледж.рф/it/gallery.php">Галерея</a></li>
-          <li><a href="https://ит-колледж.рф/it/page.php">Меню сайта</a></li>
+          <li><a href="#" id="footerSections">Меню сайта</a></li>
         </ul>
       </div>
 
@@ -824,20 +1184,282 @@
   </div>
 </footer>
 
+<!-- ===== Модальные окна аккаунта ===== -->
+<div class="modal-overlay" id="loginModal">
+  <div class="modal">
+    <div class="modal-head"><h3>Вход</h3><button class="modal-close" data-close="loginModal" aria-label="Закрыть">&times;</button></div>
+    <div class="modal-body">
+      <div class="form-error" id="loginError"></div>
+      <div class="form-group"><label>Логин (или e-mail)</label><input type="text" id="loginEmail" placeholder="ivanov@mail.ru"></div>
+      <div class="form-group"><label>Пароль</label><input type="password" id="loginPass" placeholder="••••••••"></div>
+      <button class="btn btn-primary btn-block" id="loginSubmit">Войти</button>
+      <div class="modal-switch">Нет аккаунта? <a data-open="RegisterModal">Зарегистрироваться</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="RegisterModal">
+  <div class="modal">
+    <div class="modal-head"><h3>Регистрация</h3><button class="modal-close" data-close="RegisterModal" aria-label="Закрыть">&times;</button></div>
+    <div class="modal-body">
+      <div class="form-error" id="regError"></div>
+      <div class="form-group"><label>Имя</label><input type="text" id="regName" placeholder="Иван Иванов"></div>
+      <div class="form-group"><label>E-mail (логин)</label><input type="email" id="regEmail" placeholder="ivanov@mail.ru"></div>
+      <div class="form-group"><label>Пароль</label><input type="password" id="regPass" placeholder="Не менее 6 символов"></div>
+      <button class="btn btn-primary btn-block" id="regSubmit">Создать аккаунт</button>
+      <div class="modal-switch">Уже есть аккаунт? <a data-open="loginModal">Войти</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="profileModal">
+  <div class="modal">
+    <div class="modal-head"><h3>Мой профиль</h3><button class="modal-close" data-close="profileModal" aria-label="Закрыть">&times;</button></div>
+    <div class="modal-body">
+      <div class="form-error" id="profError"></div>
+      <div class="badge-row">
+        <label class="avatar-upload" id="avatarUpload" title="Нажмите, чтобы загрузить JPG">
+          <img class="avatar-preview" id="profAvatar" alt="Аватар — нажмите для загрузки">
+          <span class="avatar-hint">Нажмите на фото, чтобы загрузить JPG</span>
+          <input type="file" id="avatarFile" accept=".jpg,.jpeg,image/jpeg">
+        </label>
+        <div class="avatar-actions">
+          <button class="btn-file" id="avatarRemove" type="button">Убрать аватар</button>
+        </div>
+      </div>
+      <div style="height:16px"></div>
+      <div class="form-group"><label>Имя</label><input type="text" id="profName"></div>
+      <div class="form-group"><label>E-mail</label><input type="email" id="profEmail"></div>
+      <button class="btn btn-primary btn-block" id="profSave">Сохранить</button>
+      <div style="height:12px"></div>
+      <button class="btn btn-ghost-prof" id="profLogout" type="button">Выйти из аккаунта</button>
+    </div>
+  </div>
+</div>
+
 <script>
-  var toggle = document.getElementById('navToggle');
-  var navBar = document.getElementById('navBar');
-  toggle.addEventListener('click', function(){
-    var open = navBar.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-    toggle.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+(function(){
+  var STORAGE_KEY = 'pkipt_users';
+  var SESSION_KEY = 'pkipt_session';
+  function getUsers(){ try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; } catch(e){ return {}; } }
+  function saveUsers(u){ localStorage.setItem(STORAGE_KEY, JSON.stringify(u)); }
+  function currentUser(){
+    var session = localStorage.getItem(SESSION_KEY);
+    if(!session) return null;
+    return getUsers()[session] || null;
+  }
+
+  function defaultAvatar(name){
+    var letter = (name||'?').trim().charAt(0).toUpperCase() || '?';
+    var bg = ['#2c5f8a','#1c2b3a','#224c71','#3a6371'];
+    var c = bg[(name||'').length % bg.length];
+    return "data:image/svg+xml;utf8," + encodeURIComponent(
+      "<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48'>" +
+      "<rect width='48' height='48' fill='" + c + "'/>" +
+      "<text x='24' y='31' font-family='Arial' font-size='22' fill='white' text-anchor='middle'>" + letter + "</text></svg>"
+    );
+  }
+
+  function openModal(id){ document.getElementById(id).classList.add('open'); }
+  function closeModal(id){ document.getElementById(id).classList.remove('open'); }
+
+  function updateAuthUI(){
+    var u = currentUser();
+    var loginBtn = document.getElementById('loginBtn');
+    var userMenu = document.getElementById('userMenu');
+    var navAvatar = document.getElementById('navAvatar');
+    var navName = document.getElementById('navUserName');
+    if(u){
+      if(loginBtn) loginBtn.style.display = 'none';
+      userMenu.style.display = 'inline-flex';
+      navAvatar.src = u.avatar || defaultAvatar(u.name);
+      navName.textContent = u.name || u.email;
+    } else {
+      if(loginBtn) loginBtn.style.display = '';
+      userMenu.style.display = 'none';
+    }
+  }
+
+  function showError(elId, msg){
+    var el = document.getElementById(elId);
+    el.textContent = msg;
+    el.classList.add('show');
+    setTimeout(function(){ el.classList.remove('show'); }, 4000);
+  }
+
+  // Открытие модалок
+  document.getElementById('loginBtn').addEventListener('click', function(){ openModal('loginModal'); });
+  document.getElementById('userMenu').addEventListener('click', function(){ openModal('profileModal'); loadProfile(); });
+  document.querySelectorAll('[data-open]').forEach(function(el){
+    el.addEventListener('click', function(){
+      closeModal('loginModal'); closeModal('RegisterModal');
+      openModal(el.getAttribute('data-open'));
+    });
+  });
+  document.querySelectorAll('[data-close]').forEach(function(el){
+    el.addEventListener('click', function(){ closeModal(el.getAttribute('data-close')); });
+  });
+  document.querySelectorAll('.modal-overlay').forEach(function(ov){
+    ov.addEventListener('click', function(e){ if(e.target === ov) ov.classList.remove('open'); });
   });
 
-  var loginBtn = document.getElementById('loginBtn');
-  loginBtn.addEventListener('click', function(){
-    window.location.href = 'https://ит-колледж.рф/it/index.php';
-    loginBtn.style.opacity = '0.6';
+  // Регистрация
+  document.getElementById('regSubmit').addEventListener('click', function(){
+    var name = document.getElementById('regName').value.trim();
+    var email = document.getElementById('regEmail').value.trim().toLowerCase();
+    var pass = document.getElementById('regPass').value;
+    if(!name){ showError('regError','Введите имя'); return; }
+    if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ showError('regError','Введите корректный e-mail'); return; }
+    if(pass.length < 6){ showError('regError','Пароль должен быть не короче 6 символов'); return; }
+    var users = getUsers();
+    var loginKey = email.toLowerCase();
+    if(users[loginKey]){ showError('regError','Такой e-mail уже зарегистрирован. Выполните вход.'); return; }
+    users[loginKey] = { name: name, email: email, pass: pass, avatar: '' };
+    saveUsers(users);
+    localStorage.setItem(SESSION_KEY, loginKey);
+    closeModal('RegisterModal');
+    document.getElementById('regName').value='';
+    document.getElementById('regEmail').value='';
+    document.getElementById('regPass').value='';
+    updateAuthUI();
   });
+
+  // Вход
+  document.getElementById('loginSubmit').addEventListener('click', function(){
+    var email = document.getElementById('loginEmail').value.trim().toLowerCase();
+    var pass = document.getElementById('loginPass').value;
+    var users = getUsers();
+    var u = users[email];
+    if(!u || u.pass !== pass){ showError('loginError','Неверный логин или пароль'); return; }
+    localStorage.setItem(SESSION_KEY, email);
+    closeModal('loginModal');
+    document.getElementById('loginEmail').value='';
+    document.getElementById('loginPass').value='';
+    updateAuthUI();
+  });
+
+  // Профиль
+  function loadProfile(){
+    var u = currentUser(); if(!u) return;
+    document.getElementById('profName').value = u.name || '';
+    document.getElementById('profEmail').value = u.email || '';
+    document.getElementById('profAvatar').src = u.avatar || defaultAvatar(u.name);
+  }
+  document.getElementById('avatarFile').addEventListener('change', function(e){
+    var file = e.target.files[0];
+    if(!file) return;
+    var isJpg = file.type === 'image/jpeg' || /\.jpe?g$/i.test(file.name);
+    if(!isJpg){ showError('profError','Можно загрузить только картинку в формате JPG'); e.target.value=''; return; }
+    if(file.size > 5 * 1024 * 1024){ showError('profError','Файл больше 5 МБ. Выберите JPG поменьше.'); e.target.value=''; return; }
+    var reader = new FileReader();
+    reader.onload = function(){
+      var img = new Image();
+      img.onload = function(){
+        // Сжимаем до 256x256, чтобы аватар корректно сохранился
+        var canvas = document.createElement('canvas');
+        var max = 256;
+        var w = img.width, h = img.height;
+        if(w > max || h > max){ var r = Math.min(max/w, max/h); w = Math.round(w*r); h = Math.round(h*r); }
+        canvas.width = w; canvas.height = h;
+        canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+        var dataUrl = canvas.toDataURL('image/jpeg', 0.85);
+        try {
+          localStorage.setItem('pkipt_avatar_tmp', dataUrl);
+          document.getElementById('profAvatar').src = dataUrl;
+        } catch(err){ showError('profError','Не удалось сохранить аватар. Попробуйте файл поменьше.'); }
+      };
+      img.onerror = function(){ showError('profError','Не удалось прочитать файл. Загрузите корректный JPG.'); };
+      img.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+    e.target.value = '';
+  });
+  document.getElementById('avatarRemove').addEventListener('click', function(){
+    document.getElementById('profAvatar').src = defaultAvatar(currentUser().name);
+    localStorage.removeItem('pkipt_avatar_tmp');
+  });
+  document.getElementById('profSave').addEventListener('click', function(){
+    var u = currentUser(); if(!u) return;
+    var name = document.getElementById('profName').value.trim();
+    if(!name){ showError('profError','Введите имя'); return; }
+    var users = getUsers();
+    var saved = users[u.email];
+    var tmp = localStorage.getItem('pkipt_avatar_tmp');
+    if(saved){
+      saved.name = name;
+      if(tmp){ saved.avatar = tmp; localStorage.removeItem('pkipt_avatar_tmp'); }
+      users[u.email] = saved;
+      saveUsers(users);
+      updateAuthUI();
+      closeModal('profileModal');
+    }
+  });
+  document.getElementById('profLogout').addEventListener('click', function(){
+    localStorage.removeItem(SESSION_KEY);
+    localStorage.removeItem('pkipt_avatar_tmp');
+    closeModal('profileModal');
+    updateAuthUI();
+  });
+
+  // ===== Страницы (разделы сайта) =====
+  var mainSections = document.querySelectorAll('body > section');
+  var pageSections = document.getElementById('pageSections');
+  var pageNews = document.getElementById('pageNews');
+  var footer = document.querySelector('.site-footer');
+
+  function hideAllPages(){
+    pageSections.classList.remove('active');
+    pageNews.classList.remove('active');
+    mainSections.forEach(function(s){ s.style.display = ''; });
+    footer.style.display = '';
+  }
+  function showPage(pageEl, view){
+    mainSections.forEach(function(s){ s.style.display = 'none'; });
+    footer.style.display = 'none';
+    pageSections.classList.remove('active');
+    pageNews.classList.remove('active');
+    pageEl.classList.add('active');
+    window.scrollTo(0,0);
+    history.pushState({view:view}, '');
+  }
+  function showSectionsPage(){ showPage(pageSections, 'sections'); }
+  function showNewsPage(){ showPage(pageNews, 'news'); }
+  function showHome(){
+    hideAllPages();
+    window.scrollTo(0,0);
+    history.pushState({view:'home'}, '');
+  }
+  document.getElementById('navSections').addEventListener('click', function(e){ e.preventDefault(); showSectionsPage(); closeMenu(); });
+  document.getElementById('footerSections').addEventListener('click', function(e){ e.preventDefault(); showSectionsPage(); });
+  document.getElementById('sectionsHome').addEventListener('click', function(e){ e.preventDefault(); showHome(); });
+  document.getElementById('navNews').addEventListener('click', function(e){ e.preventDefault(); showNewsPage(); closeMenu(); });
+  document.getElementById('footerNews').addEventListener('click', function(e){ e.preventDefault(); showNewsPage(); });
+  document.getElementById('newsHome').addEventListener('click', function(e){ e.preventDefault(); showHome(); });
+  window.addEventListener('popstate', function(e){
+    if(e.state && e.state.view === 'sections') showSectionsPage();
+    else if(e.state && e.state.view === 'news') showNewsPage();
+    else showHome();
+  });
+
+  function closeMenu(){
+    var navBar = document.getElementById('navBar');
+    var toggle = document.getElementById('navToggle');
+    navBar.classList.remove('open');
+    if(toggle){ toggle.setAttribute('aria-expanded','false'); toggle.setAttribute('aria-label','Открыть меню'); }
+  }
+
+  // Бургер
+  var toggleBtn = document.getElementById('navToggle');
+  var navBarMenu = document.getElementById('navBar');
+  toggleBtn.addEventListener('click', function(){
+    var open = navBarMenu.classList.toggle('open');
+    toggleBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggleBtn.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+  });
+
+  // Старт
+  updateAuthUI();
+})();
 </script>
 </body>
 </html>
